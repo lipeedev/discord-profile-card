@@ -40,7 +40,7 @@ export class Gateway {
 
             if (t === 'PRESENCE_UPDATE') {
                 if (d.user.id !== import.meta.env.VITE_USER_ID) return;
-                this.userInfo.presence = d;
+                this.userInfo = { ...this.userInfo, presence: d };
                 setUser(this.userInfo);
             }
 
